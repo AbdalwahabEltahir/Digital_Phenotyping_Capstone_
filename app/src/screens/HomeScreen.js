@@ -63,8 +63,11 @@ export default function HomeScreen() {
 
   return (
     <ScreenContainer>
-      <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <Text style={styles.contentTitle}>Activity Overview</Text>
+      <View style={styles.headerRow}>
+        <View>
+          <Text style={styles.contentTitle}>Activity Overview</Text>
+          <Text style={styles.summaryBadge}>Today at a glance</Text>
+        </View>
       </View>
 
       <View style={{ height: 1, backgroundColor: "#6464644a", marginVertical: 5 }} />
@@ -239,28 +242,51 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   contentView: { flex: 1 },
+  headerRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: 4,
+  },
   contentTitle: {
-    fontSize: 24,
-    marginBottom: 8,
-    color: "#ccccccff",
+    fontSize: 26,
+    marginBottom: 6,
+    color: "#f3f7fb",
     fontFamily: "Archivo-SemiBold",
+  },
+  summaryBadge: {
+    alignSelf: "flex-start",
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 999,
+    backgroundColor: "#15d6a91a",
+    color: "#8ae6d2",
+    fontSize: 11,
+    fontFamily: "Archivo-Medium",
+    letterSpacing: 0.5,
+    textTransform: "uppercase",
   },
   heroBody: {
     fontSize: 15,
-    color: "#abababff",
+    color: "#c7d0d9",
     lineHeight: 22,
     fontFamily: "Archivo-Medium",
     marginVertical: 8,
   },
 
   timeCard: {
-    backgroundColor: "#222d3aff",
+    backgroundColor: "#1a2633",
     padding: 20,
-    borderRadius: 10,
+    borderRadius: 16,
     alignItems: "center",
     marginBottom: 30,
     borderWidth: 1,
     borderColor: "#15d6a97a",
+    shadowColor: "#15d6a9",
+    shadowOpacity: 0.12,
+    shadowRadius: 12,
+    shadowOffset: { width: 0, height: 6 },
+    elevation: 3,
   },
   timeValue: {
     fontSize: 40,
@@ -328,13 +354,18 @@ const styles = StyleSheet.create({
   },
   actionButton: {
     marginTop: 20,
-    backgroundColor: "#32D74B",
+    backgroundColor: "#15d6a9",
     padding: 12,
-    borderRadius: 8,
+    borderRadius: 10,
     alignItems: "center",
+    shadowColor: "#15d6a9",
+    shadowOpacity: 0.2,
+    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 2,
   },
   actionButtonText: {
-    color: "#222d3aff",
+    color: "#0d1720",
     fontSize: 16,
     fontWeight: "600",
     fontFamily: "Archivo-Medium",
